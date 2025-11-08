@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="list"></div>
+    <button onclick="addItem()">Add Item</button>
+    <button onclick="delItem()">Delete Item</button>
+
+    <script>
+        function addItem() {
+            const newItem = document.createElement("p");
+            newItem.textContent = "New item added!";
+            document.getElementById("list").appendChild(newItem);
+        }
+        function delItem() {
+            const list =
+                document.getElementById("list");
+            // Find the last child element inside list
+            const lastItem = list.lastElementChild;
+            // Only remove if there is at least one item
+            if (lastItem) {
+                list.removeChild(lastItem);
+            } else {
+                alert("No more items to delete!");
+            }
+        }
+    </script>
+</body>
+
+</html>

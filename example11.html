@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>localStorage Example</title>
+</head>
+
+<body>
+  <h2>🧩 JavaScript localStorage Example</h2>
+  <p>Open the DevTools console (<kbd>Ctrl+Shift+I</kbd> → <b>Console</b>) and the <b>Application → Local Storage</b> tab to see the data.</p>
+
+  <button onclick="saveData()">Save Data</button>
+  <button onclick="readData()">Read Data</button>
+  <button onclick="deleteData()">Delete Data</button>
+  <button onclick="clearAll()">Clear All</button>
+
+  <script>
+    // Save data
+    function saveData() {
+      localStorage.setItem("username", "Pam");
+      console.log("Saved username = Pam");
+    }
+
+    // Read data
+    function readData() {
+      let user = localStorage.getItem("username");
+      console.log("Read username:", user);
+      alert(user ? `Username: ${user}` : "No data found!");
+    }
+
+    // Delete one item
+    function deleteData() {
+      localStorage.removeItem("username");
+      console.log("Deleted username");
+    }
+
+    // Clear all data
+    function clearAll() {
+      localStorage.clear();
+      console.log("All localStorage cleared");
+    }
+  </script>
+</body>
+</html>
